@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the develop branch
-                git branch: 'develop', url:  'https://github.com/Akashh-023/jenkins.git'
+                git branch: 'gh-pages', url:  'https://github.com/Akashh-023/beginner-html-site-styled.git'
             }
         }
         stage('Pull Code') {
