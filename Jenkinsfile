@@ -3,16 +3,16 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from the develop branch
+                // Checkout the code from the gh-pages branch
                 git branch: 'gh-pages', url:  'https://github.com/Akashh-023/beginner-html-site-styled.git'
             }
         }
         stage('Pull Code') {
             steps {
-                // Create a directory and pull the latest code
+                // Create a directory and copy the code (adjusted for Linux environment)
                 script {
-                    bat 'mkdir C:\\Users\\ASA960\\Documents\\code'
-                    bat 'xcopy * C:\\Users\\ASA960\\Documents\\code /s /e /y'
+                    sh 'mkdir -p ~/Documents/code'  // '-p' ensures the parent directories are created
+                    sh 'cp -r * ~/Documents/code'  // '-r' for recursive copy
                 }
             }
         }
